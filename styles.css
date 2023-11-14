@@ -4,14 +4,18 @@
   /* Add more font formats and paths if needed (e.g., woff, woff2) */
 }
 
-html {
+html, body {
   height: 100%;
-  width: 100%;
+  margin: 0;
 }
 
 body {
-background: rgb(241,182,82);
-background: linear-gradient(0deg, rgb(82, 146, 241) 0%, rgb(59, 208, 228) 100%);
+  background: rgb(241, 182, 82);
+  background: linear-gradient(0deg, rgb(82, 146, 241) 0%, rgb(59, 208, 228) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* Main 3D text */
@@ -29,20 +33,28 @@ background: linear-gradient(0deg, rgb(82, 146, 241) 0%, rgb(59, 208, 228) 100%);
   /* Set position to absolute for manual positioning */
   position: absolute;
 
-  width: fit-content;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
   height: fit-content;
 
   font-family: 'DashDecentHeavy';
 
   color: #FFFFFF;
 
-  /* Align to top-left */
-  top: 0px;
-  left: 50px;
+  /* Center the text horizontally and vertically */
+  top: 10%;
+  left: 10%;
 
   /* Set the transform origin to the top-left corner */
   transform-origin: top left;
 
   /* Set z-index to ensure the main text is below the shadow */
   z-index: 1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .threedtext {
+    font-size: 16px; /* Adjust as needed for smaller screens */
+  }
 }
